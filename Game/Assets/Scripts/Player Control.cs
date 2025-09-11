@@ -14,11 +14,15 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Movement System
         Vector2 tempMove = rb.linearVelocity;
 
             tempMove.x = inputX * speed;
