@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 
-            weaponUI = GameObject.FindGameObjectWithTag("weaponUI");
             pauseMenu = GameObject.FindGameObjectWithTag("ui_pause");
 
             pauseMenu.SetActive(false);
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex >= 1)
         {
-            healthBar.fillAmount = (float)player.health / (float)player.maxHealth;
+            //healthBar.fillAmount = (float)player.health / (float)player.maxHealth;
 
         }
     }
