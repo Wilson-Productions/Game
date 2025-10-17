@@ -6,6 +6,7 @@ TagManager:
   tags:
   - basicenemy
   - health
+  - ui_pause
   layers:
   - Default
   - TransparentFX
