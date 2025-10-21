@@ -17,6 +17,7 @@ public class PlayerControl : MonoBehaviour
     public float groundDetectDistance = 1.1f;
     public float speed = 5f;
     public float attackDuration = 1f;
+    public SpriteRenderer WpnAnim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerControl : MonoBehaviour
         weapon = transform.GetChild(0).gameObject;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        WpnAnim = weapon.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -55,6 +57,10 @@ public class PlayerControl : MonoBehaviour
         Vector2 directionModifier = new Vector2(weaponOffset.x * inputX, weaponOffset.y);
         if(inputX != 0f)
             weapon.transform.localPosition = directionModifier;
+        if (inputX < 0f)
+            WpnAnim.flipX = true;
+        if (inputX > 0f)
+            WpnAnim.flipX = false;
     }
 
     // Create a function that spawns an attack zone in front of the player
