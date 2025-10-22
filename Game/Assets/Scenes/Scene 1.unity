@@ -1372,6 +1372,10 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3806956693691162429, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
+      propertyPath: jumpHeight
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5723377115198493646, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -1427,6 +1431,22 @@ PrefabInstance:
     - target: {fileID: 7398288711976710789, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916840809924011347, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916840809924011347, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916840809924011347, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916840809924011347, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

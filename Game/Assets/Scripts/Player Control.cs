@@ -18,6 +18,8 @@ public class PlayerControl : MonoBehaviour
     public float speed = 5f;
     public float attackDuration = 1f;
     public SpriteRenderer WpnAnim;
+    public bool grounded;
+    public Animator Anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,11 +31,14 @@ public class PlayerControl : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         WpnAnim = weapon.GetComponent<SpriteRenderer>();
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        grounded = (Physics2D.BoxCast(transform.position, new Vector2(1, 1), 0f, -Vector2.up, groundDetectDistance));
+        Anim.SetBool("AnimFloored", grounded);
         if (health <= 0)
         {
             if (lives > 0)
@@ -55,7 +60,7 @@ public class PlayerControl : MonoBehaviour
         rb.linearVelocity = (tempMove.x * transform.right) +
                             (tempMove.y * transform.up);
         Vector2 directionModifier = new Vector2(weaponOffset.x * inputX, weaponOffset.y);
-        if(inputX != 0f)
+        if (inputX != 0f)
             weapon.transform.localPosition = directionModifier;
         if (inputX < 0f)
             WpnAnim.flipX = true;
@@ -76,7 +81,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Jump()
     {
-        if (Physics2D.Raycast(transform.position, -transform.up, groundDetectDistance))
+        if (grounded)
             rb.AddForce(transform.up * jumpHeight, ForceMode2D.Impulse);
 
     }
@@ -101,7 +106,7 @@ public class PlayerControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "health" && health < maxHealth)
+        if (collision.gameObject.tag == "health" && health < maxHealth)
         {
             health++;
             Destroy(collision.gameObject);
