@@ -8,6 +8,7 @@ TagManager:
   - health
   - ui_pause
   - ui_health
+  - plyrwpn
   layers:
   - Default
   - TransparentFX

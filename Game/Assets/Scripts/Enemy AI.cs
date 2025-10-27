@@ -27,4 +27,12 @@ public class EnemyAI : MonoBehaviour
 
         enemyRB.linearVelocity = tempSpeed;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerControl>().health--;
+        }
+
+    }
 }
