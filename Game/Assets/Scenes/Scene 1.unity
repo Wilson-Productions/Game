@@ -1340,6 +1340,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 50430863138349876, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
+      propertyPath: m_TagString
+      value: plyrwpn
+      objectReference: {fileID: 0}
     - target: {fileID: 216064816538305766, guid: 1c6f896981501d541b0cd5dccc1461ae, type: 3}
       propertyPath: m_Size.x
       value: 0.24

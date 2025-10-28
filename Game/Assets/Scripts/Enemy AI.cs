@@ -34,5 +34,11 @@ public class EnemyAI : MonoBehaviour
             collision.gameObject.GetComponent<PlayerControl>().health--;
         }
 
+        if (collision.gameObject.tag == "plyrwpn")
+        {
+            Destroy(this.gameObject);
+        }
+
+
     }
 }
