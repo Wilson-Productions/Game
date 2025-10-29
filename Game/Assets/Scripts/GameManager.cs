@@ -26,6 +26,18 @@ public class GameManager : MonoBehaviour
             pauseMenu.SetActive(false);
 
             //healthBar = GameObject.FindGameObjectWithTag("ui_health").GetComponent<Image>();
+
+
+        }
+        if (SceneManager.GetActiveScene().buildIndex < 2)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

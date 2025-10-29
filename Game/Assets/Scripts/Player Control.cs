@@ -28,8 +28,6 @@ public class PlayerControl : MonoBehaviour
         respawnPoint = GameObject.Find("RespawnPoint").transform;
         rb = GetComponent<Rigidbody2D>();
         weapon = transform.GetChild(0).gameObject;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
         WpnAnim = weapon.GetComponent<SpriteRenderer>();
         Anim = GetComponent<Animator>();
     }
@@ -49,7 +47,7 @@ public class PlayerControl : MonoBehaviour
             }
 
             if (lives <= 0)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(1);
         }
 
         // Movement System

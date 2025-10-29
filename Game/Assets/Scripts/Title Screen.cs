@@ -4,7 +4,7 @@ public class TitleScreen : MonoBehaviour
 {
     public void startGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
