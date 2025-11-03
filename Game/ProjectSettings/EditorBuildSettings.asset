@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title Screen.unity
     guid: 0ebfac7e1a5a13d4189c09ac32ede4d1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Game Over.unity
     guid: e88c96ee995a1774080c9cb6fb1c0878
   - enabled: 1
     path: Assets/Scenes/Scene 1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Scene 2.unity
+    guid: 5f931ad98c6597943911a1af50f5fd63
+  - enabled: 1
+    path: Assets/Scenes/You're Winner!.unity
+    guid: 8133914652eb5ca4ea4f65769633b77e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

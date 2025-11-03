@@ -37,6 +37,18 @@ public class PlayerControl : MonoBehaviour
     {
         grounded = (Physics2D.BoxCast(transform.position, new Vector2(1, 1), 0f, -Vector2.up, groundDetectDistance));
         Anim.SetBool("AnimFloored", grounded);
+        if (grounded && inputX != 0f)
+            {
+            Anim.SetBool("Tralalalala", true);
+            Anim.SetFloat("WhichWay", inputX);
+        }
+        else
+        {
+            Anim.SetBool("Tralalalala", false);
+            Anim.SetFloat("WhichWay", 0);
+        }
+        //if position
+            ;
         if (health <= 0)
         {
             if (lives > 0)
@@ -103,9 +115,9 @@ public class PlayerControl : MonoBehaviour
             health++;
             Destroy(collision.gameObject);
         }
-/*        if (collision.gameObject.tag == "basicenemy")
+        if (collision.gameObject.tag == "Finish")
         {
-            health--;
-        }*/
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 }

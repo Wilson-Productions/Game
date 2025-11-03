@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     GameObject weaponUI;
     GameObject pauseMenu;
 
-    Image healthBar;
+    public Image healthBar;
 
     public bool isPaused = false;
 
@@ -25,19 +25,19 @@ public class GameManager : MonoBehaviour
 
             pauseMenu.SetActive(false);
 
-            //healthBar = GameObject.FindGameObjectWithTag("ui_health").GetComponent<Image>();
+            healthBar = GameObject.FindGameObjectWithTag("ui_health").GetComponent<Image>();
 
 
         }
-        if (SceneManager.GetActiveScene().buildIndex < 2)
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else
+        if (SceneManager.GetActiveScene().buildIndex > 1 && SceneManager.GetActiveScene().buildIndex < 5)
         {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -46,8 +46,8 @@ public class GameManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex >= 1)
         {
-            //healthBar.fillAmount = (float)player.health / (float)player.maxHealth;
-
+            healthBar.fillAmount = (float)player.health / (float)player.maxHealth;
+            Debug.Log(healthBar.fillAmount);
         }
     }
 
